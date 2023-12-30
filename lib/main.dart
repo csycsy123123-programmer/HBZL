@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hbzl/core/request_manager.dart';
 import 'dart:developer' as developer;
 
 import 'package:logger/logger.dart';
@@ -10,6 +11,18 @@ void main() {
   logger.i("1231");
   logger.d("message");
   logger.f("message2");
+  String savePath = "C:\Users\admin\Desktop\1";
+  String downLoadUrl =
+      "https://hanbaidt.cn:9091/file/normal/a3206bfd78b2458baaf6d2bb401ce9f9.png";
+  RequestManager.downloadFile(downLoadUrl, savePath, (result) {
+    if(result){
+      logger.i("成功");
+    }
+    else {
+      logger.i("失败");
+    }
+  });
+
 }
 
 class MyApp extends StatelessWidget {
