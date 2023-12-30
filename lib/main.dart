@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hbzl/core/request_manager.dart';
+import 'package:hbzl/core/view/toast.dart';
 import 'dart:developer' as developer;
 
 import 'package:logger/logger.dart';
@@ -8,20 +10,26 @@ void main() {
   runApp(const MyApp());
   developer.log('123',name: '123456');
   var logger =Logger();
+  //logger 方法示例
   logger.i("1231");
   logger.d("message");
   logger.f("message2");
-  String savePath = "C:\Users\admin\Desktop\1";
-  String downLoadUrl =
-      "https://hanbaidt.cn:9091/file/normal/a3206bfd78b2458baaf6d2bb401ce9f9.png";
-  RequestManager.downloadFile(downLoadUrl, savePath, (result) {
-    if(result){
-      logger.i("成功");
-    }
-    else {
-      logger.i("失败");
-    }
-  });
+  //get 方法示例
+  String path="https://www.hanbaidt.cn:9091//shop/allProduct";
+  RequestManager.get(path).then((value) => logger.i("{$value},",));
+  // String savePath = "C:\Users\admin\Desktop\1";
+  // String downLoadUrl =
+  //     "https://hanbaidt.cn:9091/file/normal/a3206bfd78b2458baaf6d2bb401ce9f9.png";
+  // RequestManager.downloadFile(downLoadUrl, savePath, (result) {
+  //   if(result){
+  //     logger.i("成功");
+  //   }
+  //   else {
+  //     logger.i("失败");
+  //   }
+  // });
+  //toast 示例
+  ToastUtil.show(msg: '1',toastLength: Toast.LENGTH_LONG);
 
 }
 

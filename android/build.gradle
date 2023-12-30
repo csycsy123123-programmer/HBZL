@@ -1,10 +1,10 @@
 buildscript {
-    ext.kotlin_version = '1.6.0'
+    ext.kotlin_version = '1.7.0'
     repositories {
         //修改的地方
 
-        jcenter()
-        google()
+//        jcenter()
+//        google()
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
@@ -40,7 +40,9 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
         maven { url 'LocalRepository' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/'}
         maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/apache-snapshots'}
         maven { url 'https://repo.huaweicloud.com/repository/maven/' }
         maven { url 'https://repo.nju.edu.cn/repository/maven-public/' }
         maven { url 'https://maven.aliyun.com/repository/spring/' }
@@ -50,6 +52,7 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/grails-core' }
         maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
         maven { url "https://jitpack.io" }
+        maven { url "https://maven.aliyun.com/repository/google" }
         maven { url "https://repo1.maven.org/maven2/" }
         maven { url 'https://oss.sonatype.org/content/repositories/public' }
     }
@@ -66,3 +69,4 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
