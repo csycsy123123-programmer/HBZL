@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
+
+import 'package:logger/logger.dart';
 
 void main() {
   runApp(const MyApp());
+  developer.log('123',name: '123456');
+  var logger =Logger();
+  logger.i("1231");
+  logger.d("message");
+  logger.f("message2");
 }
 
 class MyApp extends StatelessWidget {
@@ -124,5 +132,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
-
+int a = 3;
