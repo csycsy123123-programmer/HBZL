@@ -44,7 +44,7 @@ class RequestManager {
         func(true);
       });
     } catch (e) {
-      logger.e("downloadFile报错：$e");
+      logger.e("downloadFile报错:$e");
     }
   }
 
@@ -58,7 +58,7 @@ class RequestManager {
         case HttpType.httpTypePost:
           return await getRequestManager().post(requestUrl, queryParameters: queryParameters, data: data);
         default:
-          throw Exception('报错了：请求只支持get和post');
+          throw Exception('报错了:请求只支持get和post');
       }
     } on DioException catch (e) {
       logger.e("报错:$e");
